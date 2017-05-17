@@ -4,7 +4,7 @@
 Repositorio para asignatura IEI032 Instituto Santo Tomás
 
 # Descripción problema
-
+# Grupo 1 Es El Mejor
 ## Magia: El encuentro
 
 Magia: El encuentro, es un juego de cartas coleccionables donde el jugador representa a un hechicero ejecutando hechizos. Para ello, 
