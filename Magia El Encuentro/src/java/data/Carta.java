@@ -7,59 +7,74 @@ package data;
 
 /**
  *
- * @author migue
+ * @author mikka
  */
-public abstract class Carta  {
+public abstract class Carta {
 
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-    private int id;
+    private static int id = 0;
     private String nombre;
     private int costo;
     private String ilustrador;
     private String edicion;
+    private String descripcion;
 
-    public Carta(String nombre, int costo, String ilustrador, String edicion) {
-        this.nombre = nombre;
-        this.costo = costo;
-        this.ilustrador = ilustrador;
-        this.edicion = edicion;
+    public Carta(int id, String nombre, int costo, String ilustrador, String edicion, String descripcion) {
+        setId();
+        setNombre(nombre);
+        setCosto(costo);
+        setIlustrador(ilustrador);
+        setEdicion(edicion);
+        setDescripcion(descripcion);
     }
     
-    
-    
+    /**
+     * @return the id
+     */
+    public static int getId() {
+        return id;
+    }
+
+    /**
+     * @return the nombre
+     */
     public String getNombre() {
         return nombre;
     }
+
     /**
      * @return the costo
      */
     public int getCosto() {
         return costo;
     }
+
     /**
      * @return the ilustrador
      */
     public String getIlustrador() {
         return ilustrador;
     }
+
     /**
      * @return the edicion
      */
     public String getEdicion() {
         return edicion;
     }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     */
+    public void setId() {
+        Carta.id = this.getId() + 1;
+    }
+
     /**
      * @param nombre the nombre to set
      */
@@ -86,5 +101,12 @@ public abstract class Carta  {
      */
     public void setEdicion(String edicion) {
         this.edicion = edicion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }

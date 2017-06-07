@@ -3,23 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Datos;
-
+package data;
+import java.util.ArrayList;
 /**
  *
  * @author marcelo
  */
 public class Mazo {
     private int idmazo;
-    private int cantidad;
-    private String nomnbre;
-    private Carta carta;
+    private ArrayList<Carta> cartas = new ArrayList<>();
 
-    public Mazo(int idmazo, int cantidad, String nomnbre, Carta carta) {
-        this.idmazo = idmazo;
-        this.cantidad = cantidad;
-        this.nomnbre = nomnbre;
-        this.carta = carta;
+    public Mazo(int idmazo, ArrayList cartas) {
+        setIdmazo(idmazo);
+        setCartas(cartas);
     }
 
     public int getIdmazo() {
@@ -28,31 +24,20 @@ public class Mazo {
 
     public void setIdmazo(int idmazo) {
         this.idmazo = idmazo;
+    }    
+
+    /**
+     * @return the cartas
+     */
+    public ArrayList<Carta> getCartas() {
+        return cartas;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    /**
+     * @param cartas the cartas to set
+     */
+    public void setCartas(ArrayList<Carta> cartas) {
+        this.cartas = cartas;
     }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public String getNomnbre() {
-        return nomnbre;
-    }
-
-    public void setNomnbre(String nomnbre) {
-        this.nomnbre = nomnbre;
-    }
-
-    public Carta getCarta() {
-        return carta;
-    }
-
-    public void setCarta(Carta carta) {
-        this.carta = carta;
-    }
- 
-    
+   
 }
