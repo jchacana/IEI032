@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>loginUsuario</servlet-name>
+        <servlet-class>Datos.LoginUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistroUsuario</servlet-name>
+        <servlet-class>Datos.RegistroUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginExitoso</servlet-name>
+        <servlet-class>Datos.LoginExitoso</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginExitosoUsuario</servlet-name>
+        <servlet-class>Datos.LoginExitosoUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginUsuario</servlet-name>
+        <url-pattern>/loginUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroUsuario</servlet-name>
+        <url-pattern>/RegistroUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginExitoso</servlet-name>
+        <url-pattern>/LoginExitoso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginExitosoUsuario</servlet-name>
+        <url-pattern>/LoginExitosoUsuario</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
