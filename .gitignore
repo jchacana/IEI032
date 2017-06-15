@@ -1,2 +1,5 @@
 /Magia El Encuentro/dist/
 /proyectofinal/target/
+
+*.class
+/build
