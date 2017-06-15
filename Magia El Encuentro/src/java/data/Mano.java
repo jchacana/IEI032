@@ -4,39 +4,41 @@
  * and open the template in the editor.
  */
 package data;
+
+
 import java.util.ArrayList;
+
 /**
  *
- * @author marcelo
+ * @author Mikka
  */
-public class Mazo implements interfaces.Coleccion{
+public class Mano implements interfaces.Coleccion{
     private static int idDisponible = 0;
-    private int idMazo;
+    private int idmazo;
     private ArrayList<Carta> cartas = new ArrayList<>();
 
-    public Mazo() {
+    public Mano() {
         setIdmazo();
     }
 
-    public Mazo(int idmazo) {
-        this.idMazo =  idmazo;
+    public Mano(int idmazo) {
+        this.idmazo = idmazo;
         idDisponible = idmazo;
     }
     
     public int getIdmazo() {
-        return idMazo;
+        return idmazo;
     }
 
     public void setIdmazo() {
         idDisponible++;
-        this.idMazo = idDisponible;
-    }    
-
+        this.idmazo = idDisponible;
+    }
 
     /**
      * @param cartas the cartas to set
      */
-    private void setCartas(ArrayList<Carta> cartas) {
+    public void setCartas(ArrayList<Carta> cartas) {
         this.cartas = cartas;
     }
 
@@ -58,13 +60,13 @@ public class Mazo implements interfaces.Coleccion{
     @Override
     public boolean updateCollection(ArrayList<Carta> collection) {
         try{
-            setCartas(cartas);
+            this.setCartas(collection);
             return true;
         }
-        catch (Exception ex){
+        catch(Exception ex){
             return false;
         }
     }
-   
+    
     
 }

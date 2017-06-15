@@ -9,24 +9,25 @@ import data.Carta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
- * @author migue
+ * @author Mikka
  */
-public abstract class ConnectionHandler {
+public abstract class CardConnectionHandler {
 
-    protected ConnectionHandler successor;
+    protected CardConnectionHandler successor;
 
-    public void setSuccessor(ConnectionHandler successor) {
+    public void setSuccessor(CardConnectionHandler successor) {
         this.successor = successor;
     }
 
-    public abstract void handleAdd(Carta card, Connection con) throws SQLException;
+    public abstract List<PreparedStatement> handleAdd(Carta card, Connection con) throws SQLException;
 
-    public abstract void handleModify(Carta card, Connection con) throws SQLException;
+    public abstract List<PreparedStatement> handleModify(Carta card, Connection con) throws SQLException;
 
-    public String prepareCardStatement(Carta card) {
+    protected String prepareCardStatement(Carta card) {
         String prepStatCard = "INSERT INTO carta VALUES"
                 + "("
                 + card.getId() + ", "

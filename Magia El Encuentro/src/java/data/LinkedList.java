@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package persistance;
+package data;
 
 /**
  *
  * @author Mikka
  */
-public class repository {
+public class LinkedList {
     
 }
