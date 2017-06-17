@@ -1,33 +1,31 @@
-<%-- 
-    Document   : index
-    Created on : 06-06-2017, 22:44:31
-    Author     : Dzerinop
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="controlador.ControladorAgregar"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>mantenedor cartas</title>
+        <link rel="stylesheet" href="CSS/estilos.css" type="text/css"/>
+        <meta http-equiv="refresh" content="text/html; charset=UTF-8">
+        <title>Magia: El Encuentro</title>
     </head>
+
     <body>
-        <h1>Cartas</h1>
-        <table>
-            <form action="ControladorAgregar" method="POST">
-                <tr>
-                    id Producto: <input type="text" name="idProducto" required><br>
-                </tr>
-                <tr>
-                    Nombre carta: <input type="text" name="nombreCarta" required><br>
-                </tr>
-                <tr>
-                    descripcion: <input type="text" name="descripcion" required><br>
-                </tr>
-                <input type="submit" value="Ingresar Cartas">
-                <a href="index.jsp"><input type="button" value="Volver"></a>
-                 </tr>
-            </form>
-        </table>
+        <div logo>
+            <img src="Imagenes/logblack.png" width="430" height="130" alt="logo">
+        </div>
+        
+        <div ingreso>
+            <p align="center">Bienvenido a Magia!!</p>
+            <p align="center">Es un juego de cartas coleccionables donde el jugador representa a un hechicero ejecutando hechizos.</p>
+            </br>
+            Ingresa Usuario: <input type="text" name="usuario" placeholder="Ingresa Usuario" />
+            </br>
+            </br>
+            Ingresa Password: <input type="password" name="password" placeholder="Ingresa Password"/>
+            </br>
+            </br>
+            <input type="submit" value="Ingresar"/>
+            <input type="submit" value="Registrar"/>
+        </div>
     </body>
 </html>
