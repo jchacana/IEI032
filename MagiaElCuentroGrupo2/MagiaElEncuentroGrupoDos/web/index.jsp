@@ -18,14 +18,14 @@
             <p align="center">Bienvenido a Magia!!</p>
             <p align="center">Es un juego de cartas coleccionables donde el jugador representa a un hechicero ejecutando hechizos.</p>
             </br>
-            Ingresa Usuario: <input type="text" name="usuario" placeholder="Ingresa Usuario" />
+            Ingresa Usuario: <input type="text" name="usuario" placeholder="Ingresa Usuario" required/>
             </br>
             </br>
-            Ingresa Password: <input type="password" name="password" placeholder="Ingresa Password"/>
+            Ingresa Password: <input type="password" name="password" placeholder="Ingresa Password" required/>
             </br>
             </br>
-            <input type="submit" value="Ingresar"/>
-            <input type="submit" value="Registrar"/>
+            <a href="home.jsp"><input type="submit" value="Ingresar"/></a>
+            <a href="mantenedorAgregar.jsp"><input type="submit" value="Registrar"/></a>
         </div>
     </body>
 </html>

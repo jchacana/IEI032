@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="CSS/estilos.css" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Mantenedor de Usuarios</title>
+        <title>Registro de Usuarios</title>
         <style>
             .tabla{
                 margin:auto;
@@ -17,8 +18,11 @@
         </style>
     </head>
     <body>
+        <div logo>
+            <img src="Imagenes/logblack.png" width="430" height="130" alt="logo">
+        </div>
         <div>
-            <h2 align="center">Registrarse</h2>
+            <p align="center">Registrarse</p>
             <form action="ControladorAgregar" method="POST">
                 <table class="tabla">
                     <tr>
