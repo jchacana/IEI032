@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import modelo.Carta;
 import modelo.Usuario;
+import modelo.Mazo;
 
 /**
  *
@@ -22,6 +23,7 @@ import modelo.Usuario;
 public class Conexion {
      private Connection conexion;
      private static ArrayList<Usuario> usuariosDisponibles = new ArrayList<>();
+     private static ArrayList<Mazo> mazosDisponibles = new ArrayList<>();
     
     public Conexion()
     {
@@ -163,6 +165,77 @@ public class Conexion {
         return modificacion;   
     }
     
+    public  void traerMazos(){
+        try{
+            Statement stm= conexion.createStatement();
+            ResultSet rs = stm.executeQuery("select * from mazo");
+            while(rs.next()){
+                mazosDisponibles.add(new Mazo(rs.getInt("idMazo"),rs.getString("tipoMazo"),rs.getInt("cantidadCartas")));
+            }
+        }
+        catch(SQLException ex){
+            
+            System.out.print(ex);   
+        }
+    }
     
+    public  int ultimoIdMazos(){
+        try{
+            Statement stm= conexion.createStatement();
+            ResultSet rs = stm.executeQuery("select max(idMazo)ultimoId from mazo");
+            while(rs.next()){
+                return rs.getInt("idMazo");
+            }
+        }
+        catch(SQLException ex){
+            
+            System.out.print(ex);   
+        }
+        return 0;
+    }
+
+    public boolean agregarMazo(Mazo mazos){
+        establecerConexion();
+        traerMazos();
+        boolean agregado = false;
+        if(!mazosDisponibles.contains(mazos)){
+             mazosDisponibles.add(ultimoIdMazos()+1,mazos);
+             agregado = true;
+        }
+        return agregado;
+    }
+    public  boolean eliminarMazo(Mazo mazos){
+        establecerConexion();
+        traerMazos();
+        if(mazosDisponibles.contains(mazos)){
+            return mazosDisponibles.remove(mazos);
+        }
+        return false;
+    }
+    public  ArrayList<Mazo> retornarTodosLosMazos(){
+    
+        establecerConexion();
+        traerMazos();
+        return mazosDisponibles;
+    }
+    public  boolean actualizarMazo(Mazo mazo){
+        establecerConexion();
+        boolean modificacion = true;
+        try{
+            Statement sentencia = conexion.createStatement();
+            String query ="UPDATE mazo SET tipoMazo = ?,  cantidadCartas = ? where idMazo =='"+mazo.getIdMazo()+"'";
+            PreparedStatement ps = conexion.prepareStatement(query);
+            ps.setString(1,mazo.getTipoMazo());
+            ps.setInt(2,mazo.getCantidadCartas());
+            int filas = ps.executeUpdate();
+            if(filas >0){
+                modificacion = true;
+            }
+        }
+        catch(Exception ex){
+           System.out.println(ex); 
+        }
+        return modificacion;   
+    }
     
 }
