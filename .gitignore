@@ -6,4 +6,4 @@ dist/
 nbdist/
 .nb-gradle/
 MagiaElCuentroGrupo2/MagiaElEncuentroGrupoDos/nbproject/private/
-MagiaElCuentroGrupo2/MagiaElEncuentroGrupoDos/nbproject/ant-deploy.xml
+nbproject/
