@@ -19,7 +19,7 @@
     </head>
     <body>
         <div logo>
-            <img src="Imagenes/logblack.png" width="430" height="130" alt="logo">
+            <img src="Imagenes/logwhite.png" width="430" height="130" alt="logo">
         </div>
         <div>
             <p align="center">Registrarse</p>
