@@ -1,0 +1,7 @@
+/MagiaElCuentroGrupo2/MagiaElEncuentroGrupoDos/build/
+nbproject/private
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
