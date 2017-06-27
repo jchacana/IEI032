@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2017 at 05:13 AM
+-- Generation Time: Jun 27, 2017 at 03:49 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -36,7 +36,22 @@ CREATE TABLE IF NOT EXISTS `carta` (
   `descripcion` varchar(255) NOT NULL,
   `ilustrador` varchar(50) NOT NULL,
   `edicion` varchar(20) NOT NULL,
+  `disponible` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cartacoleccion`
+--
+
+DROP TABLE IF EXISTS `cartacoleccion`;
+CREATE TABLE IF NOT EXISTS `cartacoleccion` (
+  `idcoleccion` int(11) NOT NULL,
+  `idcarta` int(11) NOT NULL,
+  UNIQUE KEY `fk_id_mano` (`idcoleccion`),
+  UNIQUE KEY `fk_id_carta` (`idcarta`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -73,34 +88,6 @@ CREATE TABLE IF NOT EXISTS `cartacriatura` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cartamano`
---
-
-DROP TABLE IF EXISTS `cartamano`;
-CREATE TABLE IF NOT EXISTS `cartamano` (
-  `idmano` int(11) NOT NULL,
-  `idcarta` int(11) NOT NULL,
-  UNIQUE KEY `fk_id_mano` (`idmano`),
-  UNIQUE KEY `fk_id_carta` (`idcarta`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cartamazo`
---
-
-DROP TABLE IF EXISTS `cartamazo`;
-CREATE TABLE IF NOT EXISTS `cartamazo` (
-  `carta_id` int(11) NOT NULL,
-  `mazo_id` int(11) NOT NULL,
-  KEY `carta_id` (`carta_id`),
-  KEY `mazo_id` (`mazo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `cartatierra`
 --
 
@@ -116,29 +103,16 @@ CREATE TABLE IF NOT EXISTS `cartatierra` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mano`
+-- Table structure for table `coleccion`
 --
 
-DROP TABLE IF EXISTS `mano`;
-CREATE TABLE IF NOT EXISTS `mano` (
+DROP TABLE IF EXISTS `coleccion`;
+CREATE TABLE IF NOT EXISTS `coleccion` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_usuario` int(11) NOT NULL,
+  `tipo` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `fk_id_usuario` (`id_usuario`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mazo`
---
-
-DROP TABLE IF EXISTS `mazo`;
-CREATE TABLE IF NOT EXISTS `mazo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `fk_id_usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -161,6 +135,13 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 --
+-- Constraints for table `cartacoleccion`
+--
+ALTER TABLE `cartacoleccion`
+  ADD CONSTRAINT `cartacoleccion_ibfk_1` FOREIGN KEY (`idcoleccion`) REFERENCES `coleccion` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cartacoleccion_ibfk_2` FOREIGN KEY (`idcarta`) REFERENCES `carta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `cartaconjuro`
 --
 ALTER TABLE `cartaconjuro`
@@ -173,36 +154,16 @@ ALTER TABLE `cartacriatura`
   ADD CONSTRAINT `cartacriatura_ibfk_1` FOREIGN KEY (`carta_id`) REFERENCES `carta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `cartamano`
---
-ALTER TABLE `cartamano`
-  ADD CONSTRAINT `cartamano_ibfk_1` FOREIGN KEY (`idmano`) REFERENCES `mano` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `cartamano_ibfk_2` FOREIGN KEY (`idcarta`) REFERENCES `carta` (`id`);
-
---
--- Constraints for table `cartamazo`
---
-ALTER TABLE `cartamazo`
-  ADD CONSTRAINT `cartamazo_ibfk_1` FOREIGN KEY (`carta_id`) REFERENCES `carta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `cartatierra`
 --
 ALTER TABLE `cartatierra`
   ADD CONSTRAINT `cartatierra_ibfk_1` FOREIGN KEY (`carta_id`) REFERENCES `carta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `mano`
+-- Constraints for table `coleccion`
 --
-ALTER TABLE `mano`
-  ADD CONSTRAINT `mano_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `mazo`
---
-ALTER TABLE `mazo`
-  ADD CONSTRAINT `mazo_ibfk_1` FOREIGN KEY (`id`) REFERENCES `cartamazo` (`mazo_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `mazo_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `coleccion`
+  ADD CONSTRAINT `coleccion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

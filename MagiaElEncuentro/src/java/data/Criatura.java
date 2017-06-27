@@ -14,8 +14,8 @@ public class Criatura extends Carta {
     private int ataque;
     private int resistencia;
 
-    public Criatura(int ataque, int resistencia, int id, String nombre, int costo, String ilustrador, String edicion, String descripcion) {
-        super(id, nombre, costo, ilustrador, edicion, descripcion);
+    public Criatura(int ataque, int resistencia, String nombre, int costo, String ilustrador, String edicion, String descripcion) {
+        super(nombre, costo, ilustrador, edicion, descripcion);
         this.ataque = ataque;
         this.resistencia = resistencia;
     }

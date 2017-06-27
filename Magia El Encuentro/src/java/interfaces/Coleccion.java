@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data;
-
+package interfaces;
+import java.util.List;
+import java.util.ArrayList;
 /**
  *
  * @author Mikka
  */
-public class LinkedList {
+public interface Coleccion {
+    
+    public List getCollection();
+    
     
 }

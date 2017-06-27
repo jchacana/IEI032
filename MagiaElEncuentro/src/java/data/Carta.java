@@ -18,8 +18,9 @@ public abstract class Carta {
     private String ilustrador;
     private String edicion;
     private String descripcion;
+    private boolean disponible = true;
 
-    public Carta(int id, String nombre, int costo, String ilustrador, String edicion, String descripcion) {
+    public Carta(String nombre, int costo, String ilustrador, String edicion, String descripcion) {
         setId();
         setNombre(nombre);
         setCosto(costo);
@@ -76,6 +77,10 @@ public abstract class Carta {
         Carta.idCont++;
         this.id = Carta.idCont;
     }
+    
+    public static void setId(int id) {
+        Carta.idCont = id;
+    }
 
     
     /**
@@ -112,4 +117,20 @@ public abstract class Carta {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    /**
+     * @return the disponible
+     */
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    /**
+     * @param disponible the disponible to set
+     */
+    public void setDisponible() {
+        this.disponible = !disponible;
+    }
+    
+
 }

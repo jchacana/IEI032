@@ -13,8 +13,8 @@ public class Tierra extends Carta {
 
     private int mana;
 
-    public Tierra(int mana, int id, String nombre, int costo, String ilustrador, String edicion, String descripcion) {
-        super(id, nombre, costo, ilustrador, edicion, descripcion);
+    public Tierra(int mana, String nombre, int costo, String ilustrador, String edicion, String descripcion) {
+        super(nombre, costo, ilustrador, edicion, descripcion);
         this.mana = mana;
     }
 

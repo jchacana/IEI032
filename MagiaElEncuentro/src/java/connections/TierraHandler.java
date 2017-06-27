@@ -20,17 +20,17 @@ import java.util.List;
 public class TierraHandler extends CardConnectionHandler {
 
     @Override
-    public List<PreparedStatement> handleAdd(Carta card, Connection con) throws SQLException {
+    public List<String> handleAdd(Carta card) throws SQLException {
         if (Tierra.class == card.getClass()) {
-            PreparedStatement prepStatCard = con.prepareStatement(prepareCardStatement(card));
-            PreparedStatement prepStatTir = con.prepareStatement(""
-                    + "INSERT INTO carta VALUES"
-                    + "(null, \""
-                    + ((Tierra) card).getMana() + "\", "
+            String prepStatCard =(prepareCardStatement(card));
+            String prepStatTir = (""
+                    + "INSERT INTO cartatierra VALUES"
+                    + "(default, "
+                    + ((Tierra) card).getMana() + ", "
                     + card.getId()
                     + ")"
             );
-            List<PreparedStatement> lista = new ArrayList<>();
+            List<String> lista = new ArrayList<>();
             lista.add(prepStatCard);
             lista.add(prepStatTir);
             return lista;
@@ -39,13 +39,13 @@ public class TierraHandler extends CardConnectionHandler {
     }
 
     @Override
-    public List<PreparedStatement> handleModify(Carta card, Connection con) throws SQLException {
+    public List<String> handleModify(Carta card) throws SQLException {
         if (Tierra.class == card.getClass()) {
-            List<PreparedStatement> lista = new ArrayList<>();
+            List<String> lista = new ArrayList<>();
             return lista;
         } else {
-            successor.handleAdd(card, con);
+            return successor.handleAdd(card);
         }
-        throw new SQLException("Error al agregar");
+
     }
 }

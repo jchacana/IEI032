@@ -23,19 +23,20 @@ public abstract class CardConnectionHandler {
         this.successor = successor;
     }
 
-    public abstract List<PreparedStatement> handleAdd(Carta card, Connection con) throws SQLException;
+    public abstract List<String> handleAdd(Carta card) throws SQLException;
 
-    public abstract List<PreparedStatement> handleModify(Carta card, Connection con) throws SQLException;
+    public abstract List<String> handleModify(Carta card) throws SQLException;
 
     protected String prepareCardStatement(Carta card) {
         String prepStatCard = "INSERT INTO carta VALUES"
                 + "("
-                + card.getId() + ", "
+                + "default, "
                 + card.getCosto() + ", \""
                 + card.getNombre() + "\", \""
                 + card.getDescripcion() + "\", \""
                 + card.getIlustrador() + "\", \""
-                + card.getEdicion() + "\", \""
+                + card.getEdicion() + "\", "
+                + card.isDisponible()
                 + ")";
         return prepStatCard;
     }
