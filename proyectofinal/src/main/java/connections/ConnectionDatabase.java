@@ -9,7 +9,9 @@ import data.Carta;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -97,7 +99,7 @@ public class ConnectionDatabase implements interfaces.Repository{
             return false;
         }
     }
-
+    
     @Override
     public boolean deleteCarta(int id) {
         connect();
@@ -112,7 +114,7 @@ public class ConnectionDatabase implements interfaces.Repository{
         }
         return false;
     }
-    
+   
     @Override
     public boolean addCollection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
