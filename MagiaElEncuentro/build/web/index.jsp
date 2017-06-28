@@ -22,6 +22,17 @@
 
 </head>
 
+	<header>
+            <nav class=".menu">
+		<ul>
+                    <li><a href="login.jsp">iniciar sesion</a></li>
+                    <li><a href="registro.jsp">registrate</a></li>
+                </ul>
+                
+            </nav>
+            
+		<div class="contenedor" align="center">
+			<img align="center" src="imagenes/magic.jpg" alt="">
 
 <header>
     <nav class=".menu">

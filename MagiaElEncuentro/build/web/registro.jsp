@@ -40,20 +40,20 @@
           <div class ="form-group">
               <label for ="usuario"> Usuario</label>
               <input type="text" class="form-control" id="usuario" name="user"
-                     placeholder ="introduce Tu Nombre de Usuario">
+                     placeholder ="introduce Tu Nombre de Usuario" required>
               
           
           <div class="form-group">
              <label for ="pass"> Contraseña </label>
               <input type="password" class="form-control" id="pass" name="pwd"
-                     placeholder ="introduce Tu Contraseña ">
+                     placeholder ="introduce Tu Contraseña " required>
               
           </div>
           </div>
           <div class="form-group">
              <label for ="correo"> Correo </label>
               <input type="text" class="form-control" id="corr" name="corr"
-                     placeholder ="introduce Tu Correo ">
+                     placeholder ="introduce Tu Correo " required>
               
           </div>
           

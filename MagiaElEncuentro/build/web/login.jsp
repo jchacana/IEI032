@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Login</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +40,13 @@
           <div class ="form-group">
               <label for ="usuario"> Usuario</label>
               <input type="text" class="form-control" id="usuario" name="user"
-                     placeholder ="introduce Tu Nombre de Usuario">
+                     placeholder ="introduce Tu Nombre de Usuario" required>
               
           </div>
           <div class="form-group">
              <label for ="pass"> Contraseña </label>
               <input type="password" class="form-control" id="pass" name="pwd"
-                     placeholder ="introduce Tu Contraseña ">
+                     placeholder ="introduce Tu Contraseña " required>
               
           </div>
           
