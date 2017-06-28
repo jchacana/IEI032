@@ -26,8 +26,8 @@
 	<header>
             <nav class=".menu">
 		<ul>
-                    <li><a href="">iniciar sesion</a></li>
-                    <li><a href="">registrate</a></li>
+                    <li><a href="login.jsp">iniciar sesion</a></li>
+                    <li><a href="registro.jsp">registrate</a></li>
                 </ul>
                 
             </nav>
