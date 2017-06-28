@@ -3,11 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/migue/OneDrive/Documents/IEI032/MagiaElEncuentro/src/java/servlets/RegistroUsuario.java</file>
             <file>file:/C:/Users/migue/OneDrive/Documents/IEI032/MagiaElEncuentro/src/java/servlets/LoginUsuario.java</file>
             <file>file:/C:/Users/migue/OneDrive/Documents/IEI032/MagiaElEncuentro/src/java/servlets/LoginExitoso.java</file>
             <file>file:/C:/Users/migue/OneDrive/Documents/IEI032/MagiaElEncuentro/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/migue/OneDrive/Documents/IEI032/MagiaElEncuentro/src/java/connections/UsuarioConnection.java</file>
+=======
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/src/java/interfaces/Coleccion.java</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/estilos/estilos.css</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/src/java/data/Carta.java</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/js/main2.js</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/src/java/interfaces/Repository.java</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/agregarCartas.jsp</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/home.jsp</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/js/parallax.js</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/js/main.js</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/estilos/estilomenu.css</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/web/index.jsp</file>
+            <file>file:/C:/Users/marcelo/Desktop/ip/final/MagiaElEncuentro/src/conf/MANIFEST.MF</file>
+>>>>>>> df64b1930395508ccddfaee8e23e57e364abfcd6
         </group>
     </open-files>
 </project-private>
