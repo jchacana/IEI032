@@ -22,13 +22,13 @@ public class UsuarioConnection extends ConnectionDatabase {
         //DEFINIMOS EL OBJETO QUE PERMITIRA EJECUTAR SENTENCIAS SQL A LA BASE DE DATOS
         Statement sentencia = con.createStatement();
         if (!consultaUsuario(nombre, correo)) {
-            int fila = sentencia.executeUpdate("insert into usuario values('default','" + nombre + "' ,'" + pass + "','" + correo + "' ) ");
+            int fila = sentencia.executeUpdate("insert into usuario values(default,'" + nombre + "' ,'" + pass + "','" + correo + "' ) ");
             if (fila == 1) {
                 resultado = true;
                 System.out.println(resultado);
             }
         }
-        return false;
+        return resultado;
     }
 
     public boolean consultaUsuario(String user, String correo) {
@@ -37,6 +37,21 @@ public class UsuarioConnection extends ConnectionDatabase {
             Connection con = getConnection();
             Statement sentencia = con.createStatement();
             ResultSet rs = sentencia.executeQuery("select * from usuario where nombre = '" + user + "' and correo = '" + correo + "'");
+            while (rs.next()) {
+                resultado = true;
+            }
+        } catch (SQLException ex) {
+            System.out.println("error: " + ex.getMessage());
+        }
+        return resultado;
+    }
+
+    public boolean verificarDatos(String user, String password) {
+        boolean resultado = false;
+        try {
+            Connection con = getConnection();
+            Statement sentencia = con.createStatement();
+            ResultSet rs = sentencia.executeQuery("select * from usuario where nombre = '" + user + "' and password = '" + password + "'");
             while (rs.next()) {
                 resultado = true;
             }
