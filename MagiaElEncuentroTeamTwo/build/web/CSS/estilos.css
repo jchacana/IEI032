@@ -1,0 +1,29 @@
+
+body{
+    width: 98%;
+    height: 100%;
+    background-color: #263238;
+    color: white;
+    font-family: 1.5em Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+div{
+    margin:2% auto;
+    border: 1.5px solid #CCC;
+    padding: 1em;
+    width: 40%;
+    position: relative;
+}
+
+.ingreso{
+    color: white;
+    font-family: Verdana;
+    alignment-adjust: central;
+}
+.form{
+    margin:auto;
+}
+.tabla{
+    margin:auto;
+}
