@@ -11,7 +11,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -21,38 +20,35 @@ import java.util.List;
 public class CriaturaHandler extends CardConnectionHandler {
 
     @Override
-    public List<String> handleAdd(Carta card) throws SQLException {
+    public List<PreparedStatement> handleAdd(Carta card, Connection con) throws SQLException {
         if (Criatura.class == card.getClass()) {
-            String prepStatCard = prepareCardStatement(card);
-            String prepStatCrit = (""
-                    + "INSERT INTO cartacriatura VALUES"
-                    + "(default, "
+            PreparedStatement prepStatCard = con.prepareStatement(prepareCardStatement(card));
+            PreparedStatement prepStatCrit = con.prepareStatement(""
+                    + "INSERT INTO carta VALUES"
+                    + "(null, "
                     + ((Criatura)card).getResistencia()+ ", "
                     + ((Criatura)card).getAtaque()+ ", "
                     + card.getId()
                     + ")"
             );
-            ArrayList<String> lista = new ArrayList<>();
+            List<PreparedStatement> lista = new ArrayList<>();
             lista.add(prepStatCard);
             lista.add(prepStatCrit);
-            for (Iterator<String> iterator = lista.iterator(); iterator.hasNext();) {
-                String next = iterator.next();
-                System.out.println(""+next);
-            }
             return lista;
         } else {
-            return successor.handleAdd(card);
+            successor.handleAdd(card, con);
         }
-
+        throw new SQLException("Error al agregar");
     }
 
     @Override
-    public List<String> handleModify(Carta card) throws SQLException {
+    public List<PreparedStatement> handleModify(Carta card, Connection con) throws SQLException {
         if (Criatura.class == card.getClass()) {
-            List<String> lista = new ArrayList<>();
+            List<PreparedStatement> lista = new ArrayList<>();
             return lista;
         } else {
-            return successor.handleAdd(card);
+            successor.handleAdd(card, con);
         }
+        throw new SQLException("Error al agregar");
     }
 }

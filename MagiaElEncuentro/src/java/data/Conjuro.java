@@ -12,8 +12,8 @@ package data;
 public class Conjuro extends Carta{
     private String tipo;
 
-    public Conjuro(String tipo, String nombre, int costo, String ilustrador, String edicion, String descripcion) {
-        super(nombre, costo, ilustrador, edicion, descripcion);
+    public Conjuro(String tipo, int id, String nombre, int costo, String ilustrador, String edicion, String descripcion) {
+        super(id, nombre, costo, ilustrador, edicion, descripcion);
         this.tipo = tipo;
     }
     
