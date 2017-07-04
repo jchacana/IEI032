@@ -9,11 +9,13 @@ public class Usuario {
     private int id;
     private String nombreUsuario;
     private String password;
+    private String correo;
     
-    public Usuario(int id,String nombreUsuario,String password){
+    public Usuario(int id,String nombreUsuario,String password,String correo){
         setId(id);
         setNombreUsuario(nombreUsuario);
         setPassword(password);
+        setCorreo(correo);
     }
 
     
@@ -25,6 +27,9 @@ public class Usuario {
     public String getPassword() {
         return password;
     }
+    public String getCorreo(){
+        return correo;
+    }
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
@@ -32,6 +37,9 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public void setCorreo(String correo){
+        this.correo = correo;
     }
 
     public int getId() {

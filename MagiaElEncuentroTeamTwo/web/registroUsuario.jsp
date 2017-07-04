@@ -18,12 +18,12 @@
         </div>
         <div>
             <p align="center">Registrarse</p>
-            <form action="MantenedorUsuarios" method="post">
+            <form action="Direccionamiento" method="post">
                 <table class="tabla">
                     <tr>
                         <td>Nombre</td>
                         <td>:</td>
-                        <td><input type="text" name="nombreUsuario"  required/></td>
+                        <td><input type="text" name="nombreUser"  required/></td>
                     </tr>
                     <tr>
                         <td>Password</td>
@@ -31,7 +31,12 @@
                         <td><input type="password" name="password"  required/></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="submit" name="btnAccion"  value="Agregar Usuario"/></td>
+                        <td>Correo</td>
+                        <td>:</td>
+                        <td><input type="text" name="correo" required/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" name="btnAccion"  value="Registrarse"/></td>
                     </tr>
                 </table>
             </form>

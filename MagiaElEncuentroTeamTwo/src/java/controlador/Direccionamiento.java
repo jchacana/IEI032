@@ -2,12 +2,13 @@
 package controlador;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import persistencia.Conexion;
+import modelo.Usuario;
+import persistencia.DataBaseEntry;
 
 /**
  *
@@ -15,32 +16,37 @@ import persistencia.Conexion;
  */
 public class Direccionamiento extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-    }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String accionBoton = request.getParameter("btnAccion");
-        Conexion conexion = new Conexion();
+        DataBaseEntry dataBaseEntry = new DataBaseEntry();
         if(accionBoton.equals("Ingresar")){
-            ArrayList<String> cuentas = conexion.obtenerCuentaUsuarios();
-            String nombreUsuario = request.getParameter("usuario");
-            String password = request.getParameter("password");
-            String cuenta = nombreUsuario+","+password;
-            if(cuentas.contains(cuenta)){
-                response.sendRedirect("home.jsp");
-                
-            }
-            else{
-                response.sendRedirect("index.jsp");
-            }
+           String nombre = request.getParameter("usuario");
+           String password = request.getParameter("password");
+           String cuenta = nombre+password;
+           if(dataBaseEntry.validarSessionUsuario(cuenta)){
+               
+               
+           }
         }
         if(accionBoton.equals("Registrar")){
             response.sendRedirect("registroUsuario.jsp");
+        }
+        if(accionBoton.equals("Registrarse")){
+            
+            int id = dataBaseEntry.idUsuario();
+            String nombre = request.getParameter("nombreUser");
+            String password = request.getParameter("password");
+            String correo = request.getParameter("correo");
+            if(dataBaseEntry.insertaUsuario(new Usuario(id,nombre,password,correo))){
+                response.sendRedirect("index.jsp");
+            }
+            else{
+                PrintWriter out = response.getWriter();
+                out.println("<h1>no agrega</h1>");
+            }
         }
     }
 

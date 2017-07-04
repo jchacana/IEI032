@@ -1,6 +1,6 @@
 <%-- 
     Document   : home
-    Created on : 22-06-2017, 21:42:34
+    Created on : 02-07-2017, 23:29:05
     Author     : Cristóbal
 --%>
 
@@ -9,10 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ingreso con Session</title>
+        <title>JSP Page</title>
     </head>
     <body>
-        <h1>estas con una session iniciada</h1>
-        <%--<meta http-equiv ="refresh" content="2;URL=index.jsp"> --%>
+        <h1>Session iniciada agreguen las cookies que no me acuerdo como se hace</h1>
+        <hr>
+        <h1>Nombre User (crear variable y llamar a la cookie)</h1>
+        <table class="infoUser">
+            <tr>
+                <td>Configuracion de la cuenta</td>
+            </tr>
+        </table>
     </body>
 </html>

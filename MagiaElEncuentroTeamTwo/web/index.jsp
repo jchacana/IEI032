@@ -19,11 +19,11 @@
         <div>
             <img src="Imagenes/logblack.png" width="430" height="130" alt="logo">
         </div>
-        
+
         <div class="ingreso">
             <p align="center">Bienvenido a Magia!!</p>
             <p align="center">Es un juego de cartas coleccionables donde el jugador representa a un hechicero ejecutando hechizos.</p>
-            
+
             <form action="Direccionamiento" method="post">
                 <table class="form" >
                     <tr>
@@ -38,10 +38,12 @@
                     </tr>
                     <tr>
                         <td colspan="2"><input type="submit" value="Ingresar" name="btnAccion" /></td>
+                        </form>
+                    <form action="Direccionamiento" method="POST">
                         <td><input type="submit" value="Registrar" name="btnAccion"/></a></td>
+                    </form>
                     </tr>
-            </table>
-            </form>
+                </table>
         </div>
     </body>
 </html>

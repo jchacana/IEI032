@@ -4,25 +4,9 @@
         <servlet-name>Direccionamiento</servlet-name>
         <servlet-class>controlador.Direccionamiento</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>MantenedorCartas</servlet-name>
-        <servlet-class>controlador.MantenedorCartas</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>MantenedorUsuarios</servlet-name>
-        <servlet-class>controlador.MantenedorUsuarios</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>Direccionamiento</servlet-name>
         <url-pattern>/Direccionamiento</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MantenedorCartas</servlet-name>
-        <url-pattern>/MantenedorCartas</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MantenedorUsuarios</servlet-name>
-        <url-pattern>/MantenedorUsuarios</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
