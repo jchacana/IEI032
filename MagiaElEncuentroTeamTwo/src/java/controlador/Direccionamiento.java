@@ -1,12 +1,13 @@
-
 package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.Usuario;
 import persistencia.DataBaseEntry;
 
@@ -16,35 +17,42 @@ import persistencia.DataBaseEntry;
  */
 public class Direccionamiento extends HttpServlet {
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         String accionBoton = request.getParameter("btnAccion");
         DataBaseEntry dataBaseEntry = new DataBaseEntry();
-        if(accionBoton.equals("Ingresar")){
-           String nombre = request.getParameter("usuario");
-           String password = request.getParameter("password");
-           String cuenta = nombre+password;
-           if(dataBaseEntry.validarSessionUsuario(cuenta)){
-               
-               
-           }
+        if (accionBoton.equals("Ingresar")) {
+            HttpSession sesion = request.getSession();
+            String nombre = request.getParameter("usuario");
+            String password = request.getParameter("password");
+            String cuenta = nombre + password;
+            if (dataBaseEntry.validarSessionUsuario(cuenta)) {
+                if (nombre.equals("admin") && sesion != null) {
+                    sesion.setAttribute("admin", nombre);
+                    Cookie cookie = new Cookie("admin", nombre);
+                    cookie.setMaxAge(60*30);
+                    response.addCookie(cookie);
+                    out.println("<h1>"+cookie.getValue()+"</h1>");
+                }
+                
+                
+            }
         }
-        if(accionBoton.equals("Registrar")){
+        if (accionBoton.equals("Registrar")) {
             response.sendRedirect("registroUsuario.jsp");
         }
-        if(accionBoton.equals("Registrarse")){
-            
+        if (accionBoton.equals("Registrarse")) {
+
             int id = dataBaseEntry.idUsuario();
             String nombre = request.getParameter("nombreUser");
             String password = request.getParameter("password");
             String correo = request.getParameter("correo");
-            if(dataBaseEntry.insertaUsuario(new Usuario(id,nombre,password,correo))){
+            if (dataBaseEntry.insertaUsuario(new Usuario(id, nombre, password, correo))) {
                 response.sendRedirect("index.jsp");
-            }
-            else{
-                PrintWriter out = response.getWriter();
+            } else {
+                
                 out.println("<h1>no agrega</h1>");
             }
         }

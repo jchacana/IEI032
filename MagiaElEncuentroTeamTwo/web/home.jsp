@@ -12,8 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Session iniciada agreguen las cookies que no me acuerdo como se hace</h1>
-        <hr>
+        
         <h1>Nombre User (crear variable y llamar a la cookie)</h1>
         <table class="infoUser">
             <tr>
