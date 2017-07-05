@@ -50,7 +50,7 @@ public class Direccionamiento extends HttpServlet {
             String password = request.getParameter("password");
             String correo = request.getParameter("correo");
             if (dataBaseEntry.insertaUsuario(new Usuario(id, nombre, password, correo))) {
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("home.jsp");
             } else {
                 
                 out.println("<h1>no agrega</h1>");

@@ -1,33 +1,195 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05-07-2017, 12:40:58
+    Author     : Javier
+*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
 
-body{
-    width: 98%;
-    height: 100%;
-    background-color: #263238;
-    color: white;
-    font-family: 1.5em Arial, Helvetica, sans-serif;
+body
+{
+    background-color: #34495e
+}
+
+#contenedor
+{
+    height: max-content;
+}
+
+#carrito
+{
+    color: black;
+}
+
+div#menu
+{
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: 'Arial Narrow', sans-serif;
+    margin-left: 290px;
+}
+
+div
+{
+    overflow: hidden;
+}
+
+div ul
+{
+    list-style: none;
+}
+
+div ul li
+{
+    float: left;
+}
+
+div ul li a
+{
+    padding: 10px 25px;
+    display: block;
+    color: black;
+    background-color: #7f8c8d; 
+    text-decoration: none;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 30px;
+    font-family: 'Arial Narrow', sans-serif;
+}
+
+#contenido .agregar
+{
+    border-collapse: separate;
+    border-collapse: collapse;
+    background-color: #7f8c8d;
+    margin-top: 35px;
+    padding-top: 20px;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    font-family: 'Arial Narrow', sans-serif;
+    margin-left: 215px;
+}
+
+#contenido #opcionesAdministrador
+{
+    border-collapse: separate;
+    border-collapse: collapse;
+    background-color: #7f8c8d; 
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    font-family: 'Arial Narrow', sans-serif;
+    margin-left: 220px;
+}
+
+#contenido .modifica
+{
+    border-collapse: separate;
+    border-collapse: collapse;
+    background-color: #7f8c8d; 
+    margin: auto;
+    padding-top: 20px;
+    text-align: center;
+    border: 1px black solid;
+    font-family: 'Arial Narrow', sans-serif;
+}
+
+#contenido #catalogo
+{
+    border-collapse: separate;
+    border-collapse: collapse;
+    background-color: #7f8c8d; 
+    margin: auto;
+    text-align: center;
+    font-family: 'Arial Narrow', sans-serif;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#contenido #catalogo td
+{
+    border-radius: 5px 5px 5px 5px;
+    font-family: 'Arial Narrow', sans-serif;
+    border: 1px solid black;
+}
+
+#contenido
+{
+    background-color:#7f8c8d;
+    margin-top: 70px;
+    width: 750px;
+    height: 770px;
+    text-align: center;
+    border-radius: 5px 5px 5px 5px;
+    font-family: 'Arial Narrow', sans-serif;
+    border: 1px solid black;
+    margin-right: 100px;
+}
+
+#detalle
+{
+    float: left;
+    background-color:#7f8c8d;
+    width: 925px;
+    height: 870px;
+    margin: 2px ;
+    border-radius: 5px 5px 5px 5px;
+    font-family: 'Arial Narrow', sans-serif;
+    border: 1px solid black;    
+}
+
+#logo
+{
+    margin-top: 35px;
+    margin-left: 370px;
+}
+
+#login
+{
+    margin-top:17px;
+    margin-left: 290px;
+    border-radius: 10px 10px 10px 10px;
+    float: none;
+    width: 330px;
+    height:90px;
+    background-color: #7f8c8d;
+    font-family: 'Arial Narrow', sans-serif;
+    padding-left: 30px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+
+footer
+{
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: 'Arial Narrow', sans-serif;
+    background: #000;
+    color: #fff;
+    clear: both;
+    padding: 6px 0px;
     text-align: center;
 }
 
-div{
-    margin:2% auto;
-    border: 1.5px solid #CCC;
-    padding: 1em;
-    width: 40%;
-    position: relative;
-}
-
-.ingreso{
-    color: white;
-    font-family: Verdana;
-    alignment-adjust: central;
-}
-.form{
-    margin:auto;
-}
-.tabla{
-    margin:auto;
-}
-.infoUser{
-    float: right;
-    border:1;
+div#registro
+{
+    background-color:#7f8c8d;
+    margin-top: 150px;
+    width: 650px;
+    height: 230px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: 'Arial Narrow', sans-serif;
+    border: 1px solid black;
+    margin-left: 10px;
+    text-align: center;
 }

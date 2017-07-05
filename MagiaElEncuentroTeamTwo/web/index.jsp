@@ -3,47 +3,65 @@
     Created on : 22-06-2017, 21:05:58
     Author     : Cristóbal
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link href="CSS/estilos.css" rel="stylesheet" type="text/css"/>
+<!DOCTYPE html>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
     <head>
-        <link rel="stylesheet" href="CSS/estilos.css" type="text/css"/>
-        <meta http-equiv="refresh" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Magia: El Encuentro</title>
     </head>
-
     <body>
-        <div>
-            <img src="Imagenes/logblack.png" width="430" height="130" alt="logo">
-        </div>
-
-        <div class="ingreso">
-            <p align="center">Bienvenido a Magia!!</p>
-            <p align="center">Es un juego de cartas coleccionables donde el jugador representa a un hechicero ejecutando hechizos.</p>
-
-            <form action="Direccionamiento" method="post">
-                <table class="form" >
-                    <tr>
-                        <td>Ingresa Usuario</td>
-                        <td>:</td>
-                        <td><input type="text" name="usuario" placeholder="Ingresa Usuario" required/></td>
-                    </tr>
-                    <tr>
-                        <td>Ingresa Password</td>
-                        <td>:</td>
-                        <td><input type="password" name="password" placeholder="Ingresa Password" required/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="submit" value="Ingresar" name="btnAccion" /></td>
-                        </form>
+        <div class="fondo">
+            <div id="logo">
+                <img src="./Imagenes/logblack.png" width="600" height="170">
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="index.jsp">Inicio</a></li>
+                    <li><a href="registroUsuario.jsp">Registro</a></li>
+                </ul>
+            
+                <div id="login">
+                    </br>
                     <form action="Direccionamiento" method="POST">
-                        <td><input type="submit" value="Registrar" name="btnAccion"/></a></td>
-                    </form>
+                    <h2>
+                        <input name="usuario" placeholder="Ingresa tu Usuario" required />
+                        <input type="password" name="contrase" placeholder="Ingresa tu Password" required />
+                    </h2>
+                        <td colspan="2"><input type="submit" value="Ingresar" name="btnAccion" /></td>
+                        <form action="Direccionamiento" method="POST">
+                        </form>
+                </form>
+                <table id="cosa">
+                    <tr>
+                    
                     </tr>
                 </table>
+            </div>
+            <div id="contenido">
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                <p align="center"><h1>Bienvenido a Magia!!</h1></p>
+                   </br>
+                   </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                <p align="center"><h2>Es un juego de cartas coleccionables donde el jugador </hr>
+                    representa a un hechicero ejecutando hechizos.</h2></p>
+
+                   
+            </div>
         </div>
     </body>
+</html>
+<footer>Magia : El Encuentro | Todos los derechos reservados</footer>
 </html>
