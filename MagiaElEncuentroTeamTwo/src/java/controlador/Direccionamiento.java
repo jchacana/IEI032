@@ -32,12 +32,18 @@ public class Direccionamiento extends HttpServlet {
                 if (nombre.equals("admin") && sesion != null) {
                     sesion.setAttribute("admin", nombre);
                     Cookie cookie = new Cookie("admin", nombre);
-                    cookie.setMaxAge(60*30);
+                    cookie.setMaxAge(60 * 60 * 24);
                     response.addCookie(cookie);
-                    out.println("<h1>"+cookie.getValue()+"</h1>");
+                    response.sendRedirect("home.jsp");
+                } else {
+                    if (!nombre.equals("admin")) {
+                        sesion.setAttribute("usuario", nombre);
+                        Cookie cookie = new Cookie("usuario", nombre);
+                        cookie.setMaxAge(60*60*24);
+                        response.addCookie(cookie);
+                        response.sendRedirect("home.jsp");
+                    }
                 }
-                
-                
             }
         }
         if (accionBoton.equals("Registrar")) {
@@ -50,9 +56,9 @@ public class Direccionamiento extends HttpServlet {
             String password = request.getParameter("password");
             String correo = request.getParameter("correo");
             if (dataBaseEntry.insertaUsuario(new Usuario(id, nombre, password, correo))) {
-                response.sendRedirect("home.jsp");
+                response.sendRedirect("index.jsp");
             } else {
-                
+
                 out.println("<h1>no agrega</h1>");
             }
         }
